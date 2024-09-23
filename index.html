@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concesionaria de Vehículos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            margin: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #333;
+        }
+        nav a:hover {
+            background-color: #333;
+            color: white;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        .vehicle-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .vehicle-item {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 20px;
+            background-color: white;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Portal de Cotización y Reserva de Vehículos</h1>
+    </header>
+
+    <nav>
+        <a href="#inventario">Inventario</a>
+        <a href="#cotizacion">Cotizar Vehículo</a>
+        <a href="#reserva">Reservar Vehículo</a>
+    </nav>
+
+    <section id="inventario">
+        <h2>Inventario de Vehículos</h2>
+        <div class="vehicle-list">
+            <div class="vehicle-item">
+                <h3>Modelo: Toyota Corolla</h3>
+                <p>Precio: $20,000</p>
+                <button onclick="cotizar('Toyota Corolla')">Cotizar</button>
+                <button onclick="reservar('Toyota Corolla')">Reservar</button>
+            </div>
+            <div class="vehicle-item">
+                <h3>Modelo: Honda Civic</h3>
+                <p>Precio: $22,000</p>
+                <button onclick="cotizar('Honda Civic')">Cotizar</button>
+                <button onclick="reservar('Honda Civic')">Reservar</button>
+            </div>
+            <div class="vehicle-item">
+                <h3>Modelo: Ford Focus</h3>
+                <p>Precio: $18,000</p>
+                <button onclick="cotizar('Ford Focus')">Cotizar</button>
+                <button onclick="reservar('Ford Focus')">Reservar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cotizacion">
+        <h2>Cotización de Vehículos</h2>
+        <p>Por favor selecciona un vehículo para cotizar su precio.</p>
+        <div id="resultado-cotizacion"></div>
+    </section>
+
+    <section id="reserva">
+        <h2>Reserva de Vehículos</h2>
+        <p>Selecciona un vehículo para reservar.</p>
+        <div id="resultado-reserva"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Concesionaria de Vehículos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para cotizar un vehículo
+        function cotizar(modelo) {
+            document.getElementById("resultado-cotizacion").innerHTML = "Has seleccionado cotizar el vehículo: " + modelo;
+        }
+
+        // Función para reservar un vehículo
+        function reservar(modelo) {
+            document.getElementById("resultado-reserva").innerHTML = "Has reservado el vehículo: " + modelo;
+        }
+    </script>
+
+</body>
+</html>
